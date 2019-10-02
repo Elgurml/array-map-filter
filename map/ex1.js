@@ -20,9 +20,20 @@ En sortie: [
 ]
 
  */
+const strings = [
+  'Chicken',
+  'Bacon',
+  'Tofu',
+  'Mayonnaise'
+];
+
+const strLen = strings.map(getStringsLength);
 
 function getStringsLength(strings) {
+  return `${strings} contains ${strings.length} characters`
 }
+
+console.log(strLen);
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node map/ex1
