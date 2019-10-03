@@ -31,12 +31,14 @@ const names = [
   'Sansa Stark'
 ];
 
-const stark = names.filter(keepStarks);
 
-function keepStarks(names) {
-  return names.includes('Stark')
+const keepStarks = dead => {
+  return dead.filter(starkies => {
+    return starkies.endsWith('Stark')
+  }) 
 }
 
-console.log(stark);
+console.log(keepStarks(names));
+
 // Ne pas modifier l'export
 module.exports = keepStarks;

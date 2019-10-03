@@ -35,14 +35,13 @@ const products = [
   { name: 'Huawei P20 Pro', price: 649 }
 ];
 
-const maxPrice = 500;
-
-const priceValue = products.filter(filterOnPrice);
-
-function filterOnPrice(products, maxPrice) {
-  return products.price <= maxPrice;
+const filterOnPrice = (priceValue, maxi) => {
+  
+  return priceValue.filter((phone) => {
+    return phone.price <= maxi;
+  })
 }
 
-console.log(priceValue),
+console.log(filterOnPrice(products, 4777)),
 // Ne pas modifier l'export
 module.exports = filterOnPrice;

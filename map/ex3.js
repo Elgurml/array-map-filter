@@ -77,19 +77,20 @@ const movies = [
   }
 ];
 
-const freshness = movies.map(getMoviesFreshness);
-
-function getMoviesFreshness(movies) {
-  if (movies.rating < 60){
-    return 'rotten'
-  } else if (movies.rating >= 60 && movies.rating <= 75){
-    return 'fresh'
-  } else if (movies.rating > 75) {
-    return 'certified fresh'
-  }
+const getMoviesFreshness = film => {
+  return film.map(filmData => {
+    if (filmData.rating < 60){
+      filmData.label = 'rotten'
+    } else if (filmData.rating >= 60 && filmData.rating <= 75){
+      filmData.label = 'fresh'
+    } else {
+      filmData.label = 'certified fresh'
+    }
+    return filmData
+  })
 }
 
-console.log(freshness);
+console.log(getMoviesFreshness(movies));
 
 // Ne pas modifier l'export
 module.exports = getMoviesFreshness;

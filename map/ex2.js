@@ -60,17 +60,17 @@ const foods = [
   }
 ];
 
-const veg = foods.map(getFoodCategories);
-
-function getFoodCategories(foods) {
-  if (foods.isVegetarian) {
-    return `${foods.food} is suitable for vegetarians`;
-  } else {
-    return `${foods.food} is not suitable for vegetarians`;
-  }
+const getFoodCategories= truc => {
+  return truc.map(chose => {
+    if (chose.isVegetarian) {
+      return `${chose.food} is suitable for vegetarians`;
+    } else {
+      return `${chose.food} is not suitable for vegetarians`;
+    }
+  })
 }
 
-console.log(veg);
+console.log(getFoodCategories(foods));
 
 // Ne pas modifier l'export
 module.exports = getFoodCategories;
